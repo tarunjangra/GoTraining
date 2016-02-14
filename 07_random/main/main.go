@@ -1,5 +1,6 @@
 package main
 import "fmt"
+import "errors"
 
 
 func main() {
@@ -26,4 +27,17 @@ func main() {
 	s = `Hello!
 	Terry`
 	fmt.Printf("%s\n",s)
+
+	//Error type
+	err := errors.New("This is error trying to get it work")
+	if err != nil {
+		fmt.Print(err);
+	}
+
+	// Multiple varialbe definition in Groups
+
+	const (
+		ii = 100
+		pi = 3.1415
+	)
 }
