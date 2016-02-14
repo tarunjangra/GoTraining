@@ -9,5 +9,3 @@ var Address = "B23 #6596, Hargobind Nagar, Ludhiana, 141008 India"
 // datatype of the variable.
 
 // in go we have "nil" value not Null
-
-//
