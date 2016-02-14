@@ -20,4 +20,5 @@ func main() {
 	// can get string character by index
 
 	s = "c" + s[:1]
+	fmt.Printf("%s\n",s)
 }
