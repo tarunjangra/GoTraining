@@ -15,4 +15,9 @@ func main() {
 	d[0] = 't'
 	s = string(d)
 	fmt.Printf("%s\n",s)
+
+	//you can not change string value by index. But you
+	// can get string character by index
+
+	s = "c" + s[:1]
 }
