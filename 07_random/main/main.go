@@ -21,4 +21,9 @@ func main() {
 
 	s = "c" + s[:1]
 	fmt.Printf("%s\n",s)
+
+	//string multiple linkes
+	s = `Hello!
+	Terry`
+	fmt.Printf("%s\n",s)
 }
