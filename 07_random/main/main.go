@@ -97,8 +97,25 @@ func main() {
 	mp1 := mp
 	fmt.Printf("This is the value of older map %s\n",mp1["one"])
 
+	//Make Vs New
 
+	var age *[]int = new([]int)
+	fmt.Println(age)
+	fmt.Println(*age)
 
+	var bday []int = make([]int, 1, 2)
+	fmt.Println(bday)
 
+	var rate *int = new(int)
+	fmt.Println(rate)
+	fmt.Println(*rate)
+
+	var class *string = new(string)
+	fmt.Println(class)
+	fmt.Println(*class)
+
+	var member *bool = new(bool)
+	fmt.Println(member)
+	fmt.Println(*member)
 
 }
