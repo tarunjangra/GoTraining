@@ -1,6 +1,9 @@
 package main
-import "fmt"
-import "errors"
+import (
+	"fmt"
+	"errors"
+	"github.com/tarunjangra/GoTraining/07_random/control"
+)
 
 
 func main() {
@@ -117,5 +120,10 @@ func main() {
 	var member *bool = new(bool)
 	fmt.Println(member)
 	fmt.Println(*member)
+
+	if control.Max(5,1)==1 {
+		control.Loopcontrol()
+	}
+
 
 }
