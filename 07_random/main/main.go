@@ -6,6 +6,15 @@ import (
 )
 
 
+
+func isEvenOdd(integer int) bool {
+	if integer%2 == 0 {
+		return true
+	}
+	return false
+}
+
+
 func main() {
 	var i uint8
 	_,i = 5,4
@@ -125,5 +134,10 @@ func main() {
 		control.Loopcontrol()
 	}
 
+	slice := []int {1,2,3,4,5,7,11,42}
+	fmt.Println("Slice = ", slice)
+	even,odd := control.Filter(slice,isEvenOdd)
+	fmt.Println("Odd Elements: ", odd)
+	fmt.Println("Even Elements: ", even)
 
 }

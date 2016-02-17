@@ -1,6 +1,8 @@
 package control
 import "fmt"
 
+type testInt func(int) bool // define a function type of variable
+
 func Loopcontrol() {
 	sum := 0
 	for index:=0; index<10; index++ {
@@ -25,4 +27,16 @@ func Max(a,b int) int {
 func Add1(a *int) int {
 	*a = *a+1
 	return *a
+}
+
+func Filter (slice []int, f testInt) ([]int,[]int) {
+	var even,odd []int
+	for _, value := range slice {
+		if f(value) {
+			even = append(even, value)
+		} else {
+			odd = append(odd, value)
+		}
+	}
+	return even,odd
 }
