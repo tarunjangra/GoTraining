@@ -1,5 +1,8 @@
 package control
-import "fmt"
+import (
+	"fmt"
+	"github.com/tarunjangra/GoTraining/07_random/package1"
+)
 
 type testInt func(int) bool // define a function type of variable
 
@@ -9,6 +12,7 @@ func Loopcontrol() {
 		sum += index
 	}
 	fmt.Printf("Sum is equal to %v\n", sum)
+	fmt.Println("package value %s",package1.Variable)
 
 	person := map[string]string {"name":"tarun","address":"Hargobind Nagar"}
 
@@ -24,10 +28,6 @@ func Max(a,b int) int {
 	return b
 }
 
-func Add1(a *int) int {
-	*a = *a+1
-	return *a
-}
 
 func Filter (slice []int, f testInt) ([]int,[]int) {
 	var even,odd []int
