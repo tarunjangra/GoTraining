@@ -32,4 +32,18 @@ func main() {
 	boxes.PaintItBack()
 	fmt.Println("The color of the second one is", boxes[1].Color.String())
 	fmt.Println("Obviously the color of the biggest one is", boxes.BiggestsColor().String())
+
+	mike := Student{Human{"Mike",23, "222-333-xxx"},"MIT",0.00}
+	sam := Employee{Human{"Sam",22, "232-333-xxx"},"Golang Inc.",1000}
+
+	var i Men
+	i = mike
+	fmt.Println("this is Mike, a student")
+	i.SayHi()
+	i.Sing("November rain")
+
+	i = sam
+	fmt.Println("This is Sam, an Employee:")
+	i.SayHi()
+	i.Sing("Born to the wild")
 }

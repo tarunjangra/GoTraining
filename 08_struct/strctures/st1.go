@@ -1,5 +1,8 @@
 package strctures
-import "math"
+import (
+	"math"
+	"fmt"
+)
 
 type Person struct {
 	Name string
@@ -76,3 +79,78 @@ func (c Color) String() string { //Use Color as its receiver, returns the string
 	strings := []string {"WHITE","BLACK","BLUE","RED","YELLOW"}
 	return strings[c]
 }
+
+// interface example
+
+type Human struct {
+	Name string
+	Age int
+	Phone string
+}
+
+type Student struct {
+	Human
+	School string
+	Loan float32
+}
+
+type Employee struct {
+	Human
+	Company string
+	Money float32
+}
+
+
+type YoungChap interface {
+	SayHi()
+	Sing(song string)
+	BorrowMoney(amount float32)
+}
+
+type ElderLyGent interface {
+	SayHi()
+	Sing(song string)
+	SpendSalary(amount float32)
+}
+
+type Men interface {
+	SayHi()
+	Sing(lyrics string)
+	Guzzle(beerStein string)
+}
+
+func (h Human) SayHi() {
+	fmt.Printf("Hi, I am %s you can call me on %s\n", h.Name,h.Phone)
+}
+
+func (h Human) Sing(lyrics string){
+	fmt.Println("La la,la la la, la la ....", lyrics)
+}
+
+func (h Human) Guzzle(beerStein string) {
+	fmt.Println("Guzzle Guzzle Guzzle...", beerStein)
+}
+
+func (e Employee) SayHi() {
+	fmt.Printf("Hi, I am %s, is work at %s. Call me on %s\n", e.Name,
+		e.Company, e.Phone)
+}
+
+func (s Student) BorrowMoney(amount float32){
+	s.Loan += amount
+}
+
+func (e Employee) SpendSalary(amount float32){
+	e.Money -= amount
+}
+
+//if a function uses an empty interface as its argument type, it can accept
+// any type; if a function uses empty as it's return value type, it can
+// return any type
+
+// to define the slice with can have all type of values shoule
+// be done with the help of empty interface.
+
+}
+
+
