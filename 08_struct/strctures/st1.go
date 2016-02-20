@@ -37,24 +37,24 @@ const(
 	YELLOW
 )
 
-type Color byte
+type Color byte //Use Color as the alias of the byte
 
-type Box struct {
+type Box struct { // Define a struct Box which has fields height, width, lenght and color
 	Width, Height, Depth float64
 	Color Color
 }
 
-type BoxList []Box // a slice of boxes
+type BoxList []Box // Define a struct BoxList which has box as its field
 
-func (b Box) Volume() float64 {
+func (b Box) Volume() float64 { // Volume() uses box as its receiver and returns volume of Box
 	return b.Width * b.Height * b.Depth
 }
 
-func (b *Box) SetColor(c Color) {
+func (b *Box) SetColor(c Color) { //SetColor(c Color) changes Box's color.
 	b.Color = c
 }
 
-func (b1 BoxList) BiggestsColor() Color {
+func (b1 BoxList) BiggestsColor() Color { //BiggestColor() returns the color which has the biggest volume.
 	v := 0.00
 	k := Color(WHITE)// default value of each color would be WHITE
 	for _,b := range b1 {
@@ -66,13 +66,13 @@ func (b1 BoxList) BiggestsColor() Color {
 	return k
 }
 
-func (b1 BoxList) PaintItBack() {
+func (b1 BoxList) PaintItBack() { //PaintBlack() sets color for all Box in BoxList to black.
 	for i, _ := range b1 {
 		b1[i].SetColor(BLACK)
 	}
 }
 
-func (c Color) String() string {
+func (c Color) String() string { //Use Color as its receiver, returns the string format of color name.
 	strings := []string {"WHITE","BLACK","BLUE","RED","YELLOW"}
 	return strings[c]
 }
